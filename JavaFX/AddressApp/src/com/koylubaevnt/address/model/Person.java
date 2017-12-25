@@ -106,7 +106,7 @@ public class Person {
 		return birthday.get();
 	}
 	
-	public void getBirthday(LocalDate birthday) {
+	public void setBirthday(LocalDate birthday) {
 		this.birthday.set(birthday);
 	}
 	
