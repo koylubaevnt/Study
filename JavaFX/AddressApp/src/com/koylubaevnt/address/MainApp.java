@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.util.prefs.Preferences;
 
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import com.koylubaevnt.address.model.Person;
 import com.koylubaevnt.address.model.PersonListWrapper;
+import com.koylubaevnt.address.view.BirthdayStatisticsController;
 import com.koylubaevnt.address.view.PersonEditDialogController;
 import com.koylubaevnt.address.view.PersonOverviewController;
 import com.koylubaevnt.address.view.RootLayoutController;
@@ -27,7 +27,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import sun.applet.Main;
 
 
 public class MainApp extends Application {
@@ -177,6 +176,36 @@ public class MainApp extends Application {
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
+		}
+    }
+    
+    /**
+     * Открывает диалоговое окно для вывода статистики дней рождений.
+     */
+    public void showBirthdayStatistics() {
+    	try {
+    		// Загружаем fxml-файл и создаем новую сцену для всплывающего диалогового окна.
+        	FXMLLoader loader = new FXMLLoader();
+    		loader.setLocation(MainApp.class.getResource("view/BirthdayStatistics.fxml"));
+    		AnchorPane page = (AnchorPane) loader.load();
+    		
+    		// Создаем диалоговое окно Stage.
+    		Stage dialogStage = new Stage();
+    		dialogStage.setTitle("Birthday Statistics");
+    		dialogStage.initModality(Modality.WINDOW_MODAL);
+    		dialogStage.initOwner(primaryStage);
+    		Scene scene = new Scene(page);
+    		dialogStage.setScene(scene);
+    		
+    		// Передаем адресата в контроллер.
+    		BirthdayStatisticsController controller = loader.getController();
+    		controller.setPersonData(personData);
+    		
+    		// Отображаем диалоговое окно и ждем, пока пользователь его не закроет
+    		dialogStage.showAndWait();
+    		
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
     }
     
