@@ -1,0 +1,69 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- Own style -->
+    <style name="MyTextStyle" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#00FF00</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <!-- Inherits from exist style -->
+    <style name="GreenText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#00FF00</item>
+    </style>
+
+    <!-- Inherits from own style-->
+    <style name="MyTextStyle.Red">
+        <item name="android:textColor">#FF0000</item>
+    </style>
+
+    <style name="MyTextStyle.Red.Big">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="Numbers">
+        <item name="android:inputType">number</item>
+    </style>
+
+    <!--    <style name="CustomTheme" parent="android:Theme.Material.Light">-->
+
+    <style name="CustomTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/customThemeColor</item>
+        <item name="android:colorBackground">@color/customThemeColor</item>
+    </style>
+
+    <style name="OwnAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:alertDialogTheme">@style/AlertDialogCustom</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="OwnAppTheme">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+
+    <style name="DestructiveButton" parent="android:Widget.DeviceDefault.Button.Borderless">
+        <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:background">#5FA3D0</item>
+        <item name="android:windowTitleStyle">@style/TitleDialogStyle</item>
+    </style>
+
+    <style name="TitleDialogStyle">
+        <item name="android:textColor">#D71616</item>
+    </style>
+</resources>

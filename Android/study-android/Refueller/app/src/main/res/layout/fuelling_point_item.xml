@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:paddingTop="16dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:paddingLeft="16dp">
+
+        <FrameLayout
+            android:id="@+id/flFuellingPointNumber"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circle">
+            <TextView
+                android:id="@+id/tvFuellingPointNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="@dimen/text_size_fuelling_point_number"
+                android:typeface="normal"
+                tools:text="1" />
+        </FrameLayout>
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:id="@+id/tvFuellingPointName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/text_size_fuelling_point_name"
+            android:typeface="normal"
+            tools:text="Колонка №1" />
+        <!--android:layout_height="24dp"-->
+
+        <TextView
+            android:id="@+id/tvFuellingPointStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginBottom="6dp"
+            android:layout_weight="2"
+            android:fontFamily="sans-serif"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="@dimen/text_size_fuelling_point_status"
+            android:typeface="normal"
+            tools:text="Идет налив" />
+        <!--android:layout_height="24dp"-->
+
+        <!--<ProgressBar-->
+            <!--android:id="@+id/progressBar"-->
+            <!--style="@style/CustomProgressBar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:progressDrawable="@drawable/progressbar_animation"/>-->
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            style="@style/IndeterminateProgressBar" />
+
+        <!---->
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:paddingLeft=""-->
+    <!--android:paddingBottom="5dp">-->
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/flFuellingPointNumber"-->
+        <!--android:layout_width="40dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:background="@drawable/circle">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvFuellingPointNumber"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:fontFamily="sans-serif"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textColor="@color/colorTextPrimary"-->
+            <!--android:textSize="@dimen/text_size_fuelling_point_number"-->
+            <!--android:typeface="normal"-->
+            <!--tools:text="1" />-->
+    <!--</FrameLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvFuellingPointName"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="start"-->
+            <!--android:layout_marginBottom="6dp"-->
+            <!--android:fontFamily="sans-serif"-->
+            <!--android:textAlignment="textStart"-->
+            <!--android:textColor="@color/colorTextPrimary"-->
+            <!--android:textSize="@dimen/text_size_fuelling_point_name"-->
+            <!--android:typeface="normal"-->
+            <!--tools:text="Колонка №1" />-->
+        <!--&lt;!&ndash;android:layout_height="24dp"&ndash;&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tvFuellingPointStatus"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="start"-->
+            <!--android:layout_marginBottom="6dp"-->
+            <!--android:layout_weight="2"-->
+            <!--android:fontFamily="sans-serif"-->
+            <!--android:textAlignment="textStart"-->
+            <!--android:textColor="@color/colorTextPrimary"-->
+            <!--android:textSize="@dimen/text_size_fuelling_point_status"-->
+            <!--android:typeface="normal"-->
+            <!--tools:text="Идет налив" />-->
+        <!--&lt;!&ndash;android:layout_height="24dp"&ndash;&gt;-->
+
+        <!--<ProgressBar-->
+            <!--android:id="@+id/progressBar"-->
+            <!--style="?android:attr/progressBarStyleHorizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:layout_height="2dp"-->
+            <!--android:layout_weight="1"-->
+            <!--/>-->
+        <!--&lt;!&ndash;android:progressDrawable="@drawable/progressbar"&ndash;&gt;-->
+
+    <!--</LinearLayout>-->
+
+
+
+<!--</LinearLayout>-->

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="utf-8"></meta>
+		<meta http-equiv="Content-Type" content="text/html"></meta>
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css"></link>
+		<link rel="stylesheet" type="text/css" media="all" href="css/bootstrap-glyphicons.css"></link>
+		<link rel="stylesheet" type="text/css" media="all" href="css/styles.css"></link>
+	</head>
+	
+	<body>
+		<div class="container">
+			<h1>Spring Boot journal</h1>
+			
+			<p th:if="${param.logout}" class="alert">You have been logged out</p>
+			<p th:if="${param.error}" class="alert alert-error">There was an error, please try again</p>
+			<h2>Login ti Spring Boot Journal</h2>
+			<form name="form" th:action="@{/login}" action="/login" method="POST">
+				<input type="text" name="username" value="" placeholder="Username" />
+				<input type="password" name="password" placeholder="Password" />
+				<input type="submit" id="login" value="Login" class="btn btn-primary" />
+			</form>
+		</div>
+	</body>
+</html> 

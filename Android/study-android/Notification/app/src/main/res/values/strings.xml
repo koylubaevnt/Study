@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Notification</string>
+
+    <string name="warning">Последнее китайское предупреждение!</string>
+    <string name="notifytitle">Напоминание</string>
+    <string name="notifytext">Пора покормить кота</string>
+</resources>

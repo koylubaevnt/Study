@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Счастливого дня рождения</string>
+    <string name="text_view_happy_birthday">С днем рождения Бэн!</string>
+    <string name="text_view_from">От Никиты</string>
+</resources>

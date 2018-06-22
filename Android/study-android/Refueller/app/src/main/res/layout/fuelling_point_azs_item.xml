@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <TextView
+        android:id="@+id/tvAzsAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="@dimen/text_size_fuelling_point_status"
+        android:typeface="normal"
+        tools:text="Пермь, Циолковского, 5"
+        />
+
+    <TextView
+        android:id="@+id/tvAzsWork"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorTextSecondary"
+        android:textSize="@dimen/text_size_fuelling_point_status"
+        android:typeface="normal"
+        android:layout_marginBottom="16dp"
+        tools:text="24 часа"
+        />
+</LinearLayout>

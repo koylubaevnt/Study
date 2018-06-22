@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Передача данных</string>
+    <string name="second_activity">Вторая активность</string>
+    <string name="transfer">Передать</string>
+    <string name="whome">Кому</string>
+    <string name="description">Описание</string>
+
+</resources>

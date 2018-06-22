@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--
+    <animation-list
+        android:oneshot="false"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:duration="200" android:drawable="@drawable/stat_sys_wifi_signal_1_anim0" />
+        <item android:duration="200" android:drawable="@drawable/stat_sys_wifi_signal_1_anim1" />
+        <item android:duration="200" android:drawable="@drawable/stat_sys_wifi_signal_1_anim2" />
+        <item android:duration="200" android:drawable="@drawable/stat_sys_wifi_signal_1_anim3" />
+        <item android:duration="200" android:drawable="@drawable/stat_sys_wifi_signal_1_anim4" />
+        <item android:duration="200" android:drawable="@drawable/stat_sys_wifi_signal_1_anim5" />
+    </animation-list>
+-->
+</set>
