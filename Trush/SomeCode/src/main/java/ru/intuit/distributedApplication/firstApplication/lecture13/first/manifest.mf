@@ -1,0 +1,4 @@
+Manifest-Version: 1.0 
+Ant-Version: Apache Ant 1.6.5 
+Created-By: koylubaevnt
+Main-Class: ru.intuit.distributedApplication.firstApplication.lecture13.first.JMSClient

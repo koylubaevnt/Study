@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="76dp"
+    android:layout_height="76dp">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:src="@drawable/circle" />
+
+    <TextView
+        android:id="@+id/tv_dispencer_num"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:gravity="center"
+        android:textSize="36sp"
+        android:text="1"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="76dp"
+        android:layout_height="76dp" />
+
+</FrameLayout>

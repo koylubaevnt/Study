@@ -1,0 +1,7 @@
+*/node_modules/
+*/app/**/*.js
+*/app/**/*.js.map
+02_TypeScriptSamples/**/*.js
+Work
+myapp
+DPD

@@ -1,0 +1,245 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.apress</groupId>
+  <artifactId>prospring4</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>ProSpring 4</name>
+  <description>Studing Spring Framework 4</description>
+  <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+  	<maven.compiler.target>1.8</maven.compiler.target>
+  	<!-- 4.2.2.RELEASE --><spring.version>4.0.2.RELEASE</spring.version>
+  	<aspectj.version>1.8.10</aspectj.version>
+  	<groovy.version>2.2.2</groovy.version>
+  	<mysql.version>5.1.29</mysql.version>
+  	<h2.version>1.3.172</h2.version>  
+  	<!-- 5.2.8.Final --><hibernate.version>4.2.3.Final</hibernate.version>
+  	<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
+  	<jpa.version>1.0.0.Final</jpa.version>	
+  	<!-- 1.3.0.RELEASE --><spring-data.version>1.5.0.RELEASE</spring-data.version>
+  	<guava.version>14.0.1</guava.version>
+  	<log4j.version>1.2.17</log4j.version>
+  	<usertype.version>3.0.0.GA</usertype.version>
+  	<slf4j.version>1.7.6</slf4j.version>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  	<!-- Модуль Spring для поддержки транзакций -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-tx</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency> 
+  	<!-- Стандартная библиотека JSR-330 -->
+  	<dependency>
+  		<groupId>javax.inject</groupId>
+  		<artifactId>javax.inject</artifactId>
+  		<version>1</version>
+  	</dependency>
+  	<!-- Модуль Spring JDBC -->
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<!-- Модуль Spring для ORM -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+
+	<!-- Библиотека Spring Data JPA -->
+	<!--<dependency>
+	    <groupId>org.springframework.data</groupId>
+	    <artifactId>spring-data-jpa</artifactId>
+	    <version>${spring-data.version}</version>
+	</dependency>-->
+	  <dependency>
+         <groupId>org.springframework.data</groupId>
+         <artifactId>spring-data-jpa</artifactId>
+         <version>${spring-data.version}</version>
+         <exclusions>
+             <exclusion>
+                 <groupId>org.springframework</groupId>
+                 <artifactId>spring-tx</artifactId>
+             </exclusion>
+             <exclusion>
+                 <groupId>org.springframework</groupId>
+                 <artifactId>spring-orm</artifactId>
+             </exclusion>
+             <exclusion>
+                 <groupId>org.springframework</groupId>
+                 <artifactId>spring-aop</artifactId>
+             </exclusion>
+             <exclusion>
+                 <groupId>org.springframework</groupId>
+                 <artifactId>spring-beans</artifactId>
+             </exclusion>
+         </exclusions>
+     </dependency>
+
+	<!-- Пакет Spring АОР для подержки аспектноориентированного программирования -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aop</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<!-- Модуль Spring для AspectJ -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aspects</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<!-- Полезные вспомогательные классы для поддержки коллекций и т.д. -->
+	<dependency>
+		<groupId>com.google.guava</groupId>
+		<artifactId>guava</artifactId>
+		<version>${guava.version}</version>
+	</dependency>
+  	
+  	<!-- Библиотека Groovy -->
+  	<dependency>
+  		<groupId>org.codehaus.groovy</groupId>
+  		<artifactId>groovy-all</artifactId>
+  		<version>${groovy.version}</version>
+  	</dependency>
+  	<!-- Библиотека времени выполнения AspectJ -->
+  	<dependency>
+  		<groupId>org.aspectj</groupId>
+  		<artifactId>aspectjrt</artifactId>
+  		<version>${aspectj.version}</version>
+  	</dependency>
+  	<!-- Библиотека связывания AspectJ -->
+  	<dependency>
+  		<groupId>org.aspectj</groupId>
+  		<artifactId>aspectjweaver</artifactId>
+  		<version>${aspectj.version}</version>
+  	</dependency>
+  	
+  	<!-- Jаvа-библиотека драйвера MySQL -->
+  	<dependency>
+  		<groupId>mysql</groupId>
+  		<artifactId>mysql-connector-java</artifactId>
+  		<version>${mysql.version}</version>
+  	</dependency>
+  	
+	<!-- Библиотека транзакций JTA для Atomikos -->
+	<dependency>
+  		<groupId>com.atomikos</groupId>
+  		<artifactId>transactions-jdbc</artifactId>
+  		<version>3.9.3</version>
+  	</dependency>
+  	
+  	
+  	<!-- Библиотека поддержки пула подключений к базе данных из Apache -->
+	<dependency>
+	    <groupId>commons-dbcp</groupId>
+	    <artifactId>commons-dbcp</artifactId>
+	    <version>1.4</version>
+	</dependency>
+	
+	<!-- Jаvа-библиотека для базы данных Н2 -->
+	<dependency>
+		<groupId>com.h2database</groupId>
+		<artifactId>h2</artifactId>
+		<version>${h2.version}</version>
+	</dependency>
+	
+	<!-- Библиотека Hibernate 4 -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>${hibernate.version}</version>
+	</dependency>
+	
+	<!-- Библиотека JPA -->
+	<dependency>
+		<groupId>org.hibernate.javax.persistence</groupId>
+		<artifactId>hibernate-jpa-2.1-api</artifactId>
+		<version>${jpa.version}</version>
+	</dependency>
+	
+	<!-- Библиотека Joda Time
+		АРl-интерфейс даты и времени, предназначенный для упрощения
+		взаимодействия со встроенными библиотеками Java, которые работа­ют 
+		с датой и временем. -->
+	<dependency>
+	    <groupId>joda-time</groupId>
+	    <artifactId>joda-time</artifactId>
+	    <version>2.3</version>
+	</dependency>
+
+	<dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-envers</artifactId>
+          <version>${hibernate.version}</version>
+      </dependency>
+
+
+	<dependency>
+         <groupId>org.jadira.usertype</groupId>
+         <artifactId>usertype.core</artifactId>
+         <version>${usertype.version}</version>
+     </dependency>
+
+
+	<!-- Дидлиотека log4j для логирования -->		
+	<dependency>
+         <groupId>log4j</groupId>
+         <artifactId>log4j</artifactId>
+         <version>${log4j.version}</version>
+     </dependency>
+
+	<!-- Библиотека АРl-интерфейса JSR-349 -->
+	<dependency>
+         <groupId>javax.validation</groupId>
+         <artifactId>validation-api</artifactId>
+         <version>1.1.0.Final</version>
+     </dependency>
+     
+	<!-- Библиотека Hibernate Validator, которая 
+		поддерживает спецификацию JSR-349: Bean Validation -->
+	<dependency>
+         <groupId>org.hibernate</groupId>
+         <artifactId>hibernate-validator</artifactId>
+         <version>${hibernate-validator.version}</version>
+     </dependency>
+
+	<!-- Библиотека АРl-интерфейса JSR-349 -->
+	<dependency>
+		<groupId>javax.validation</groupId>
+		<artifactId>validation-api</artifactId>
+		<version>1.1.0.Final</version>
+	</dependency>
+	
+	<!-- Библиотека ведения журналов (www.slf4j.org). 
+		Данная библиотека помогает соединить ведение журнала SLF4J с библиотекой log4j -->
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<version>${slf4j.version}</version>
+	</dependency>
+	
+	<dependency>
+	   <groupId>javax.el</groupId>
+	   <artifactId>javax.el-api</artifactId>
+	   <version>3.0.0</version>
+	</dependency>
+	<dependency>
+          <groupId>org.glassfish.web</groupId>
+          <artifactId>el-impl</artifactId>
+          <version>2.2</version>
+      </dependency>
+  </dependencies>
+  
+</project>

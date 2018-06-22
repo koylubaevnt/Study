@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let name_form_array of names">
+    <!--
+    Hello {{ name }}
+    -->
+    <app-user-item [name]="name_form_array"></app-user-item>
+  </li>
+</ul>

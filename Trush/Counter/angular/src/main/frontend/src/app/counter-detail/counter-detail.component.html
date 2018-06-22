@@ -1,0 +1,10 @@
+<div *ngIf="counter">
+    
+  <h2>{{ counter.id }} Details</h2>
+  <div><span>id: </span>{{counter.id}}</div>
+  <div><span>max: </span>{{counter.max}}</div>
+  <div><span>current: </span>{{counter.current}}</div>
+  <button (click)="start()" >{{btnChangeStatus}}</button>
+  <button (click)="stop()" [disabled]="!isRunning">stop</button>
+  <button (click)="goBack()">go back</button>
+</div>

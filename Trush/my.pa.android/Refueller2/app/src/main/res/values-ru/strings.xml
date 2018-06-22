@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Наливщик</string>
+
+    <string name="my_fuelling_point">Мои ТРК</string>
+    <string name="all_fuelling_point">Все ТРК</string>
+</resources>

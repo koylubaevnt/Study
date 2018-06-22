@@ -1,0 +1,13 @@
+// BillingService.idl
+// IDL-описание BillingService
+module complex {
+	interface Card {
+		void addMoney(in double money);
+		void subMoney(in double money);
+		double getBalance();
+	};
+	interface BillingService {
+		Card getCard(in string card);
+		Card addNewCard(in string personName, in string card);
+	};
+};

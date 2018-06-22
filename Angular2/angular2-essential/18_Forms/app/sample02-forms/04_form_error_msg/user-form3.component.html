@@ -1,0 +1,33 @@
+<div class="container">
+        <h3>User Registration</h3>
+    
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <!-- Каждый элемент использует id для связи с label
+                    и аттрибут name, для того, чтобы Angular Form ассоциировал
+                    элемент управления с формой -->
+                <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" #name="ngModel">
+                <div [hidden]='name.valid || name.pristine' class="alert alert-danger">
+                    Поле имя обязательное для заполнения
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" id="age" [(ngModel)]="model.age" name="age" required #age="ngModel">
+                <div [hidden]='age.valid || age.pristine' class="alert alert-danger">
+                    Поле возраст обязательное для заполнения
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="role">Role</label>
+                <select type="number" class="form-control" id="role" [(ngModel)]="model.role" name="role" required>
+                    <option *ngFor="let r of roles" [value]="r">{{r}}</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn btn-default">Submit</button>
+        
+        </form>

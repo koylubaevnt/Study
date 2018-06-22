@@ -1,0 +1,28 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.wЗ.org/2001/XLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_З_O.xsd"
+	version="З.0">
+	
+	<display-name>Spring HTTP Invoker Sample</display-name>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>contactExporter</servlet-name>
+		<servlet-class>
+			org.springframework.web.context.support.HttpRequestHandlerServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>contactExporter</servlet-name>
+		<url-pattern>/remoting/ContactService</url-pattern>
+	</servlet-mapping>
+
+</web-app>

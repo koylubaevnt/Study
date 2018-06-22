@@ -1,0 +1,218 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.apress.prospring4</groupId>
+  <artifactId>web-app</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>web-app Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
+	<spring.version>4.0.2.RELEASE</spring.version>
+	<spring-data.version>1.5.0.RELEASE</spring-data.version>
+	<spring.security.version>3.2.1.RELEASE</spring.security.version>
+	
+	<javaee.web.api.version>6.0</javaee.web.api.version>
+    
+    <h2.version>1.3.172</h2.version>  
+  	
+  	<jpa.version>1.0.0.Final</jpa.version>
+	<jsr349.version>1.1.0.Final</jsr349.version>
+    <hibernate-validator.version>5.1.0.Final</hibernate-validator.version>
+	
+	<joda-time.version>2.3</joda-time.version>
+	<usertype.version>3.0.0.GA</usertype.version>
+	<guava.version>14.0.1</guava.version>
+	
+    <jstl.version>1.2</jstl.version>
+    <tiles.version>3.0.4</tiles.version>
+    <jackson.version>1.9.13</jackson.version>
+  </properties>
+  
+  <dependencies>
+	<!-- Библиотека Spring для контекста -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	
+	<!-- Модуль Spring JDBC -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	 	
+	<!-- Модуль Spring Web MVC для поддержки MVC -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	
+	<!-- Библиотека Spring Data JPA -->
+	<dependency>
+		<groupId>org.springframework.data</groupId>
+		<artifactId>spring-data-jpa</artifactId>
+		<version>${spring-data.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	
+	<!-- Модуль ядра Spring Security -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-core</artifactId>
+		<version>${spring.security.version}</version>
+	</dependency>
+	
+	<!-- Веб-модуль Spring Security -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-web</artifactId>
+		<version>${spring.security.version}</version>
+	</dependency>
+	
+	<!-- Модуль конфигурации Spring Security -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-config</artifactId>
+		<version>${spring.security.version}</version>
+	</dependency>
+	
+	<!-- Библиотека JSP дескрипторов Spring Security -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-taglibs</artifactId>
+		<version>${spring.security.version}</version>
+	</dependency>
+	
+	<!-- Jаvа-библиотека для базы данных Н2 -->
+	<dependency>
+		<groupId>com.h2database</groupId>
+		<artifactId>h2</artifactId>
+		<version>${h2.version}</version>
+	</dependency>
+	 	
+	<!-- Библиотека JPA -->
+	<dependency>
+		<groupId>org.hibernate.javax.persistence</groupId>
+		<artifactId>hibernate-jpa-2.1-api</artifactId>
+		<version>${jpa.version}</version>
+	</dependency>
+	
+	<!-- Реализация проверки достоверности JSR-349 -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-validator</artifactId>
+	    <version>${hibernate-validator.version}</version>
+	</dependency>
+		
+	
+	<!-- Библиотека Joda Time
+	АРl-интерфейс даты и времени, предназначенный для упрощения
+	взаимодействия со встроенными библиотеками Java, которые работа­ют 
+	с датой и временем. -->
+	<dependency>
+		<groupId>joda-time</groupId>
+		<artifactId>joda-time</artifactId>
+		<version>${joda-time.version}</version>
+	</dependency>
+	
+	<!-- Библиотека дескрипторов JSP, 
+	которая подерживает форматирование типов Joda-Time в 
+	представлениях -->
+	<dependency>
+		<groupId>joda-time</groupId>
+		<artifactId>joda-time-jsptags</artifactId>
+		<version>1.1.1</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.jadira.usertype</groupId>
+		<artifactId>usertype.core</artifactId>
+		<version>${usertype.version}</version>
+	</dependency>
+	<!-- АРl-интерфейс проверки достоверности JSR-349 -->
+	<dependency>
+		<groupId>javax.validation</groupId>
+		<artifactId>validation-api</artifactId>
+		<version>${jsr349.version}</version>
+	</dependency>
+	
+	<!-- Модуль Apache Commons 1О предоставляет множество удобных функций 
+	для упрощения обработки ввода-вывода в Java -->
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>2.4</version>
+	</dependency>
+	
+	<!-- Интерфейс JEE 7.0 Web Profile API, который содержит библиотеку для Servlet 3.1.-->
+	<dependency>
+		<groupId>javax</groupId>
+		<artifactId>javaee-web-api</artifactId>
+		<version>${javaee.web.api.version}</version>
+		<scope>provided</scope>
+	</dependency>
+	    
+	<!-- Полезные вспомогательные классы для поддержки коллекций и т.д. -->
+	<dependency>
+		<groupId>com.google.guava</groupId>
+		<artifactId>guava</artifactId>
+		<version>${guava.version}</version>
+	</dependency>
+	   
+	<dependency>
+		<groupId>jstl</groupId>
+		<artifactId>jstl</artifactId>
+		<version>${jstl.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.tiles</groupId>
+		<artifactId>tiles-core</artifactId>
+		<version>${tiles.version}</version>
+	</dependency>
+	
+	<!-- Подержка Apache Тiles для файлов представлений JSP -->
+	<dependency>
+		<groupId>org.apache.tiles</groupId>
+		<artifactId>tiles-jsp</artifactId>
+		<version>${tiles.version}</version>
+	</dependency>
+	
+	<!-- Библиотека ядра для Apache Тiles -->
+	<dependency>
+		<groupId>org.apache.tiles</groupId>
+		<artifactId>tiles-core</artifactId>
+		<version>${tiles.version}</version>
+	</dependency>
+	
+	<!-- Процессор Jackson JSON для nодержки данных в формате JSON -->
+	<dependency>
+		<groupId>org.codehaus.jackson</groupId>
+		<artifactId>jackson-mapper-lgpl</artifactId>
+		<version>${jackson.version}</version>
+	</dependency> 
+	
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>3.8.1</version>
+		<scope>test</scope>
+	</dependency>
+  </dependencies>
+  
+  <build>
+    <finalName>web-app</finalName>
+  </build>
+</project>

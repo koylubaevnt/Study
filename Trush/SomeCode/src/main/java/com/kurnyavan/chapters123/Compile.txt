@@ -1,0 +1,2 @@
+cd C:\Java\Tools\Servers\Tomcat\apache-tomcat-4.1.40\webapps\myApp\WEB-INF\classes
+javac -classpath C:\Java\Tools\Servers\Tomcat\apache-tomcat-4.1.40\common\lib\servlet.jar;C:\Java\Tools\Servers\Tomcat\apache-tomcat-4.1.40\webapps\myApp\WEB-INF\classes\ CookieServlet.java

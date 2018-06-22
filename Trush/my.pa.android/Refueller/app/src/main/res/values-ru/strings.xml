@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Наливщик</string>
+
+    <string name="add_dispensers">Добавление колонок</string>
+    <string name="dispenser_num">Колонка №</string>
+
+    <string name="label_fuel">Топливо</string>
+    <string name="label_amount">Сумма</string>
+    <string name="label_litres">Литры</string>
+    <string name="label_enter_manual">Ввести вручную</string>
+    <string name="label_fill_up">Заправить</string>
+    <string name="label_no_internet_connection">Нет интернет соединения</string>
+
+    <string name="tab_dispenser_all">Все ТРК</string>
+    <string name="tab_dispenser_my">Мои ТРК</string>
+
+    <string name="content_description_check">Выбрано</string>
+
+
+</resources>

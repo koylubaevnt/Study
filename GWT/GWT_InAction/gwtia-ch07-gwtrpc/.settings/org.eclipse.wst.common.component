@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="gwtia-ch07-gwtrpc-1.0">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/" source-path="/war"/>
+        <property name="context-root" value="gwtia-ch07-gwtrpc"/>
+        <property name="java-output-path" value="/gwtia-ch07-gwtrpc/target/classes"/>
+        <property name="component.exclusion.patterns" value="WEB-INF/classes/**,gwtia_ch07_gwtrpc/**"/>
+    </wb-module>
+</project-modules>

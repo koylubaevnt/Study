@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.apress.prospring</groupId>
+  <artifactId>stomp</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>STOMP</name>
+  <description>Отправка сообщений с помощью STOMP</description>
+  
+   <properties>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
+  	<spring.version>4.0.2.RELEASE</spring.version>
+  	<tomcat.version>7.0.54</tomcat.version>
+  </properties>
+  
+  <dependencies>
+  	<!-- Модуль Spring Context -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  	
+  	<!-- Модуль Spring WebSocket -->
+	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-websocket</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  	
+  	<!-- Модуль Spring Web MVC -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  	
+  	<!-- Интерфейс Apache Tomcat WebSocket API -->
+  	<dependency>
+  		<groupId>org.apache.tomcat</groupId>
+  		<artifactId>tomcat-websocket-api</artifactId>
+  		<version>${tomcat.version}</version>
+  	</dependency>
+
+	<!-- Интерфейс Apache Tomcat WebSocket API (для Tomcata) -->
+	<dependency>
+  		<groupId>org.apache.tomcat.embed</groupId>
+  		<artifactId>tomcat-embed-websocket</artifactId>
+  		<version>${tomcat.version}</version>
+  	</dependency>
+  	
+  	<!-- Библиотека привязки данных Jackson -->
+  	<dependency>
+  		<groupId>com.fasterxml.jackson.core</groupId>
+  		<artifactId>jackson-databind</artifactId>
+  		<version>2.4.1.1</version>
+  	</dependency>
+  	
+  	<!-- Модуль spring-messaging для подержки отправки сообщений в примере использования STOMP -->
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-messaging</artifactId>
+  		<version>${spring.version}</version>
+  	</dependency>
+  	
+  </dependencies>
+  
+</project>

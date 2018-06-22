@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Refueller</string>
+
+    <string name="content_description_check">check</string>
+
+    <string name="add_dispensers">Add dispensers</string>
+
+    <string name="dispenser_num">Dispenser #</string>
+
+    <string name="label_fuel">Fuel</string>
+    <string name="label_amount">Amount</string>
+    <string name="label_litres">Litres</string>
+    <string name="label_enter_manual">Enter manual</string>
+    <string name="label_fill_up">Fill up</string>
+    <string name="label_no_internet_connection">No internet connection</string>
+
+    <string name="tab_dispenser_all">All Dispensers</string>
+    <string name="tab_dispenser_my">My Dispensers</string>
+
+    <string name="content_description_status">status</string>
+
+</resources>

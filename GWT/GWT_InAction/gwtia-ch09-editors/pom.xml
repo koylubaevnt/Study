@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.manning.gwtia</groupId>
+	<artifactId>gwtia-ch09-editor</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+	<name>gwtia-ch09-editor</name>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>codehaus</id>
+			<url>http://repo2.maven.org/maven2/</url>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<properties>
+        <gwt.version>2.4.0</gwt.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20090211</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-validator</artifactId>
+		    <version>4.2.0.Final</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>1.6.1</version>
+		</dependency>
+		<dependency>
+	       <groupId>org.slf4j</groupId>
+	       <artifactId>slf4j-simple</artifactId>
+	       <version>1.6.4</version>
+	   </dependency>
+	</dependencies>
+
+	<build>
+
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>test</testSourceDirectory>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.google.web.bindery</groupId>
+						<artifactId>requestfactory-apt</artifactId>
+						<version>${gwt.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1-beta-1</version>
+				<configuration>
+					<warSourceDirectory>${basedir}/war</warSourceDirectory>
+					<archiveClasses>true</archiveClasses>
+					<warSourceExcludes>WEB-INF/classes/**,WEB-INF/lib/**,gwtia_editor/**</warSourceExcludes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>2.5.0</version>
+				<executions>
+					<execution>
+						<configuration>
+							<modules>
+								<param>com.manning.gwtia.ch09.EditorExample</param>
+							</modules>
+						</configuration>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-user</artifactId>
+						<version>${gwt.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-dev</artifactId>
+						<version>${gwt.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<buildOutputDirectory>war/WEB-INF/classes/</buildOutputDirectory>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<additionalBuildcommands>
+						<buildCommand>
+							<name>com.google.gdt.eclipse.core.webAppProjectValidator</name>
+						</buildCommand>
+						<buildCommand>
+							<name>com.google.gwt.eclipse.core.gwtProjectValidator</name>
+						</buildCommand>
+					</additionalBuildcommands>
+					<additionalProjectnatures>
+						<projectnature>com.google.gwt.eclipse.core.gwtNature</projectnature>
+					</additionalProjectnatures>
+					<classpathContainers>
+						<!-- <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer> -->
+						<classpathContainer>com.google.gwt.eclipse.core.GWT_CONTAINER</classpathContainer>
+						<!-- <classpathContainer>org.eclipse.jdt.junit.JUNIT_CONTAINER/4</classpathContainer> -->
+						<!--
+							<classpathContainer>com.instantiations.j2ee.J2EE5_CONTAINER</classpathContainer>
+						-->
+					</classpathContainers>
+				</configuration>
+			</plugin>
+			
+			    
+		</plugins>
+
+	</build>
+	
+</project>

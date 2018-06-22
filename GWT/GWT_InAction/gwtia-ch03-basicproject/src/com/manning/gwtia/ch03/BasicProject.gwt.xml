@@ -1,0 +1,12 @@
+<module rename-to="BasicProject">
+
+	<inherits name="com.google.gwt.user.User" />
+	<source path="client" />
+	
+	<inherits name='com.google.gwt.user.theme.standard.Standard'/>
+	<!-- inherits name='com.google.gwt.user.theme.chrome.Chrome'/ -->
+	<!-- inherits name='com.google.gwt.user.theme.dark.Dark'/ -->
+	<!-- inherits name='com.google.gwt.user.theme.clean.Clean'/ -->
+
+	<entry-point class="com.manning.gwtia.ch03.client.BasicProject"></entry-point>
+</module>

@@ -1,0 +1,77 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>StockTicker</title>
+<script 
+	type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.2/sockjs.min.js"></script>
+<script 
+	type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script 
+	type="text/javascript"
+	src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script 
+	type="text/javascript">
+	var stomp = Stomp.over(new SockJS("/stomp/ws"));
+	
+	function displayStockPrice (frame) {
+		var prices = JSON.parse(frame.body);
+		
+		$('#price').empty();
+		
+		for(var i in prices) {
+			var price = prices[i];
+			$('#price').append(
+				$('<tr>').append(
+					$('<td>').html(price.code),
+					$('<td>').html(price.price.toFixed(2)),
+					$('<td>').html(price.dateFormatted)
+				)
+			);
+		}
+	}
+	
+	var connectCallback = function () {
+		stomp.subscribe('/topic/price', displayStockPrice);
+	};
+	
+	var errorCallback = function (error) {
+		alert(error.headers.message);
+	}
+	
+	stomp.connect("guest", "guest", connectCallback, errorCallback);
+	
+	$(document).ready(function () {
+		$('.addStockButton').click(function (evt) {
+			evt.preventDefault();
+			var jsonstr = JSON.stringify({'code': $('.addStock .code').val(),
+				'price':Number($('.addStock .price').val())});
+			
+			stomp.send("/app/addStock", {}, jsonstr);
+			
+			return false;
+		});
+	});
+</script>
+</head>
+<body>
+	<h2>StockTicker</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Code</th>
+				<th>Price</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody id="price"></tbody>
+	</table>
+	
+	<p class="addStock">
+		Code: <input type="text" class="code"/><br/>
+		Price: <input type="text" class="price"/><br/>
+		<button class="addStockButton">Add Stock</button>
+	</p>
+</body>
+</html>
