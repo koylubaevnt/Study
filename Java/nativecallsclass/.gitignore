@@ -34,4 +34,8 @@ proguard/
 build/
 bin/
 
+*.dll
+*.obj
+*.exp
+*.lib
 .settings
